@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[scheduled]]
+  function = "cron-pro"
+  schedule = "*/10 * * * *"
+
+[[scheduled]]
+  function = "cron-business"
+  schedule = "* * * * *"
